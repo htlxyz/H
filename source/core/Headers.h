@@ -13,5 +13,10 @@
 #include "Constant.h"
 #include <inttypes.h>
 #include "HMessage.h"
+#include "HModBase.h"
+#include <assert.h>
+#include <stdio.h>
+#include <vector>
+#include <string>
 
 #endif

@@ -6,8 +6,11 @@
 //  Copyright (c) 2015年 htl. All rights reserved.
 //
 
-#include "modules/HServer.h"
+#include "core/HServer.h"
+#include "core/HLogger.h"
 #include <iostream>
+
+USING_NS_H;
 
 int main(int argc, const char * argv[]) {
     H::HServer *server = new H::HServer();
@@ -27,6 +30,15 @@ int main(int argc, const char * argv[]) {
     if (0 != server->release()) {
         std::cout << "[main]Release HServer Fail!";
     }
+    
+    HLogger_create("/Users/htl/Documents/Work/H/source/config/logger_config.properties");
+    HLogger_init(nullptr);
+    HMessage msg;
+    msg.data = (void*)"this is from hmessaage";
+    HLogger_process(nullptr, &msg);
+    msg.data = (void*)"123";
+    HLogger_process(nullptr, &msg);
+    HLogger_release(nullptr);
     
     delete server;
     std::cout << "HServer down bye!\n";

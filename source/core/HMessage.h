@@ -9,14 +9,8 @@
 #ifndef H_HMessage_h
 #define H_HMessage_h
 
-typedef enum HMessageType_t {
-    HMessageType_NUMBER = 1;
-    HMessageType_STRING = 2;
-    HMessageType_BIN    = 3;
-}HMessageType;
-
 typedef struct HMessage_t {
-    HMessageType msgType;
+    int msgType;
     int source;
     int dest;
 

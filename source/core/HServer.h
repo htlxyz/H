@@ -9,7 +9,7 @@
 #ifndef __H__HServer__
 #define __H__HServer__
 
-#include "../core/Headers.h"
+#include "Headers.h"
 #include <stdio.h>
 
 NS_H_BEGIN

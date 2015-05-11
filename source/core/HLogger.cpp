@@ -6,17 +6,23 @@
 //  Copyright (c) 2015年 htl. All rights reserved.
 //
 
-#include "../core/Headers.h"
+#include "Headers.h"
 #include "HLogger.h"
 
-#include "../3rd/log4cplus/include/log4cplus/logger.h"
+#include "log4cplus/configurator.h"
+#include "log4cplus/loggingmacros.h"
+#include "log4cplus/logger.h"
 
 NS_H_BEGIN
 
 using namespace std;
+using namespace log4cplus;
 
-void* HLogger_create() {
+static Logger root = Logger::getRoot();
+
+void* HLogger_create(string configFile) {
     log4cplus::initialize();
+    PropertyConfigurator::doConfigure(configFile);
 
     return (void*)1; //avoid nullptr check
 }
@@ -26,6 +32,7 @@ int HLogger_init(void* instance) {
 }
 
 int HLogger_process(void* instance, HMessage * msg) {
+    LOG4CPLUS_DEBUG(root, LOG4CPLUS_TEXT(((char*)msg->data)));
     return 0;
 }
 

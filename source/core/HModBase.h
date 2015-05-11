@@ -9,7 +9,7 @@
 #ifndef __H__HModBase__
 #define __H__HModBase__
 
-#include "../core/Headers.h"
+#include "Headers.h"
 
 #include <stdio.h>
 
@@ -17,8 +17,10 @@ NS_H_BEGIN
 
 class HModBase {
 public:
+    static int create();
     virtual int init();
     virtual int process();
+    virtual int release();
 };
 
 NS_H_END
