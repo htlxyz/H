@@ -10,10 +10,19 @@
 #define __H__HLogger__
 
 #include "Headers.h"
-#include <string>
-#include <stdio.h>
+#include "HModBase.h"
 
 NS_H_BEGIN
+
+class HLogger : public HModBase {
+    
+public:
+    static HLogger* create();
+    virtual int start();
+    virtual int stop();
+    virtual int process(HMessage* msg);
+
+};
 
 void* HLogger_create(std::string config);
 int HLogger_init(void* instance);

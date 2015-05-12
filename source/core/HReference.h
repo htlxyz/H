@@ -10,7 +10,6 @@
 #define __H__HReference__
 
 #include "Headers.h"
-#include <stdio.h>
 
 NS_H_BEGIN
 
@@ -19,6 +18,7 @@ private:
     unsigned int _referenceCount;
 
 public:
+    HReference();
     void retain();
     unsigned int release();
     HReference* autorelease();

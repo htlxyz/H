@@ -9,18 +9,23 @@
 #ifndef __H__HModBase__
 #define __H__HModBase__
 
-#include "Headers.h"
-
-#include <stdio.h>
+#include "HReference.h"
 
 NS_H_BEGIN
 
-class HModBase {
+class HModBase : public HReference {
+    
 public:
-    static int create();
-    virtual int init();
-    virtual int process();
-    virtual int release();
+    static HModBase* create();
+    virtual int start();
+    virtual int stop();
+    virtual int process(HMessage *msg);
+    
+    int setName(const std::string& name);
+    std::string& getName();
+    
+private:
+    std::string _name;
 };
 
 NS_H_END

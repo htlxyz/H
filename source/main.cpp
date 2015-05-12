@@ -7,23 +7,21 @@
 //
 
 #include "core/HServer.h"
-#include "core/HLogger.h"
-#include <iostream>
 
 USING_NS_H;
 
 int main(int argc, const char * argv[]) {
-    H::HServer *server = new H::HServer();
+    HServer *server = HServer::create();
     if (nullptr == server) {
         std::cout << "[main]Create HServer Fail!";
         return 1;
     }
 
-    if (0 != server->init()) {
+    if (0 != server->start()) {
         std::cout << "[main]Init HServer Fail!";
     }
     
-    if (0 != server->run()) {
+    if (0 != server->process(nullptr)) {
         std::cout << "[main]HServer Run Fail!";
     }
     
@@ -31,14 +29,14 @@ int main(int argc, const char * argv[]) {
         std::cout << "[main]Release HServer Fail!";
     }
     
-    HLogger_create("/Users/htl/Documents/Work/H/source/config/logger_config.properties");
-    HLogger_init(nullptr);
-    HMessage msg;
-    msg.data = (void*)"this is from hmessaage";
-    HLogger_process(nullptr, &msg);
-    msg.data = (void*)"123";
-    HLogger_process(nullptr, &msg);
-    HLogger_release(nullptr);
+//    HLogger_create("/Users/htl/Documents/Work/H/source/config/logger_config.properties");
+//    HLogger_init(nullptr);
+//    HMessage msg;
+//    msg.data = (void*)"this is from hmessaage";
+//    HLogger_process(nullptr, &msg);
+//    msg.data = (void*)"123";
+//    HLogger_process(nullptr, &msg);
+//    HLogger_release(nullptr);
     
     delete server;
     std::cout << "HServer down bye!\n";

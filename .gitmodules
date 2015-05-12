@@ -1,3 +1,12 @@
 [submodule "source/3rd/log4cplus"]
 	path = source/3rd/log4cplus
 	url = git@github.com:log4cplus/log4cplus.git
+[submodule "source/3rd/beanstalkd"]
+	path = source/3rd/beanstalkd
+	url = git@github.com:kr/beanstalkd.git
+[submodule "source/3rd/beanstalkd-client"]
+	path = source/3rd/beanstalkd-client
+	url = git@github.com:deepfryed/beanstalk-client.git
+[submodule "source/3rd/jemalloc"]
+	path = source/3rd/jemalloc
+	url = git@github.com:jemalloc/jemalloc.git

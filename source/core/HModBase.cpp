@@ -8,15 +8,31 @@
 
 #include "HModBase.h"
 
-
 NS_H_BEGIN
 
-int HModBase::init() {
+int HModBase::start() {
     return 0;
 }
 
-int HModBase::process() {
+int HModBase::stop() {
     return 0;
+}
+
+int HModBase::process(HMessage *msg) {
+    std::cout << "rewirte this function" << std::endl;
+    
+    return 0;
+}
+
+
+int HModBase::setName(const std::string& name) {
+    _name = name;
+    
+    return 0;
+}
+
+std::string& HModBase::getName() {
+    return _name;
 }
 
 NS_H_END

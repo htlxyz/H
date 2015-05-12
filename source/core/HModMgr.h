@@ -10,8 +10,7 @@
 #define __H__HModMgr__
 
 #include "Headers.h"
-#include <stdio.h>
-#include <string>
+#include "HModBase.h"
 
 NS_H_BEGIN
 
@@ -21,6 +20,21 @@ public:
     static HModMgr* create();
     virtual int init();
     virtual int process();
+
+    int setRootPath(const std::string& path);
+    int addSearchPath(const std::string path);
+    HModBase* loadMod(const std::string& name);
+    HModBase* getMod(const std::string& name);
+    int releaseMod(const std::string& name);
+    int releaseMod(HModBase* pMod);
+
+private:
+    HModMgr();
+    
+    HModBase* findMod(const std::string& name);
+    bool modExist(const HModBase* pMod);
+    
+    std::vector<HModBase*> _mods;
 };
 
 NS_H_END

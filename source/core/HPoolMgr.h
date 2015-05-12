@@ -16,9 +16,11 @@ NS_H_BEGIN
 
 class HAutoReleasePool {
 public:
-    int push(HReference* ref);
+    int addObject(HReference* ref);
     bool isExist(HReference* ref);
     int clear();
+    int setName(const std::string& name);
+    const std::string& getName();
 
 private:
     std::vector<HReference*> _objects;
@@ -29,6 +31,16 @@ class HPoolMgr {
     
 public:
     static HPoolMgr* getInstance();
+    HAutoReleasePool* getPool(const std::string& name);
+    HAutoReleasePool* createPool(const std::string& name);
+    int releasePool(HAutoReleasePool* pool);
+    
+private:
+    static HPoolMgr* _instance;
+    
+    std::vector<HAutoReleasePool*> _pools;
+    
+    int addPool(HAutoReleasePool* pool);
     
 };
 

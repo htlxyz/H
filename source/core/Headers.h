@@ -9,14 +9,15 @@
 #ifndef H_headers_h
 #define H_headers_h
 
-#include "Macros.h"
-#include "Constant.h"
+#include "HMacros.h"
+#include "HConstant.h"
 #include <inttypes.h>
 #include "HMessage.h"
-#include "HModBase.h"
 #include <assert.h>
 #include <stdio.h>
+#include <iostream>
 #include <vector>
+#include <algorithm>
 #include <string>
 
 #endif

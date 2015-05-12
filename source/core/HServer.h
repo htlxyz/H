@@ -10,16 +10,26 @@
 #define __H__HServer__
 
 #include "Headers.h"
-#include <stdio.h>
+#include "HModMgr.h"
 
 NS_H_BEGIN
 
-class HServer {
+class HServer : public HModBase {
     
 public:
-    int init();
-    int run();
-    int release();
+    static HServer* create();
+    virtual int start();
+    virtual int stop();
+    virtual int process(HMessage *msg);
+    
+    ~HServer();
+    
+private:
+    HServer();
+    
+    int initModMgr();
+    
+    HModMgr* _modMgr;
 };
 
 NS_H_END

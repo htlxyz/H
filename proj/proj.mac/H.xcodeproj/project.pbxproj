@@ -15,6 +15,10 @@
 		496DA55D1B00ACF200FA3E00 /* HReference.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496DA5551B00ACF200FA3E00 /* HReference.cpp */; };
 		496DA55E1B00ACF200FA3E00 /* HServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496DA5571B00ACF200FA3E00 /* HServer.cpp */; };
 		496DA5611B00AF5F00FA3E00 /* HPoolMgr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496DA55F1B00AF5F00FA3E00 /* HPoolMgr.cpp */; };
+		496DA5681B01CEC100FA3E00 /* HFileUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496DA5661B01CEC100FA3E00 /* HFileUtils.cpp */; };
+		496DA56C1B01FDB300FA3E00 /* HQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496DA56A1B01FDB300FA3E00 /* HQueue.cpp */; };
+		496DA5701B02020700FA3E00 /* beanstalk.c in Sources */ = {isa = PBXBuildFile; fileRef = 496DA56E1B02020700FA3E00 /* beanstalk.c */; };
+		496DA5731B02064000FA3E00 /* HMalloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 496DA5711B02064000FA3E00 /* HMalloc.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -107,7 +111,7 @@
 		496DA4FB1B008EBE00FA3E00 /* liblog4cplus.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liblog4cplus.dylib; sourceTree = "<group>"; };
 		496DA4FC1B008EBE00FA3E00 /* liblog4cplus.la */ = {isa = PBXFileReference; lastKnownFileType = text; path = liblog4cplus.la; sourceTree = "<group>"; };
 		496DA4FE1B008EBE00FA3E00 /* log4cplus.pc */ = {isa = PBXFileReference; lastKnownFileType = text; path = log4cplus.pc; sourceTree = "<group>"; };
-		496DA54C1B00ACF200FA3E00 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		496DA54C1B00ACF200FA3E00 /* HConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HConstant.h; sourceTree = "<group>"; };
 		496DA54D1B00ACF200FA3E00 /* Headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Headers.h; sourceTree = "<group>"; };
 		496DA54E1B00ACF200FA3E00 /* HLogger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HLogger.cpp; sourceTree = "<group>"; };
 		496DA54F1B00ACF200FA3E00 /* HLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLogger.h; sourceTree = "<group>"; };
@@ -120,9 +124,18 @@
 		496DA5561B00ACF200FA3E00 /* HReference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HReference.h; sourceTree = "<group>"; };
 		496DA5571B00ACF200FA3E00 /* HServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HServer.cpp; sourceTree = "<group>"; };
 		496DA5581B00ACF200FA3E00 /* HServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HServer.h; sourceTree = "<group>"; };
-		496DA5591B00ACF200FA3E00 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		496DA5591B00ACF200FA3E00 /* HMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMacros.h; sourceTree = "<group>"; };
 		496DA55F1B00AF5F00FA3E00 /* HPoolMgr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HPoolMgr.cpp; sourceTree = "<group>"; };
 		496DA5601B00AF5F00FA3E00 /* HPoolMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPoolMgr.h; sourceTree = "<group>"; };
+		496DA5661B01CEC100FA3E00 /* HFileUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HFileUtils.cpp; sourceTree = "<group>"; };
+		496DA5671B01CEC100FA3E00 /* HFileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFileUtils.h; sourceTree = "<group>"; };
+		496DA5691B01F13C00FA3E00 /* HValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HValues.h; sourceTree = "<group>"; };
+		496DA56A1B01FDB300FA3E00 /* HQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HQueue.cpp; sourceTree = "<group>"; };
+		496DA56B1B01FDB300FA3E00 /* HQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQueue.h; sourceTree = "<group>"; };
+		496DA56E1B02020700FA3E00 /* beanstalk.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = beanstalk.c; path = "beanstalkd-client/beanstalk.c"; sourceTree = "<group>"; };
+		496DA56F1B02020700FA3E00 /* beanstalk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = beanstalk.h; path = "beanstalkd-client/beanstalk.h"; sourceTree = "<group>"; };
+		496DA5711B02064000FA3E00 /* HMalloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = HMalloc.c; sourceTree = "<group>"; };
+		496DA5721B02064000FA3E00 /* HMalloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMalloc.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +182,7 @@
 		496DA1A41AFCAE0400FA3E00 /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				496DA56D1B0201DD00FA3E00 /* beanstalkd-client */,
 				496DA1A51AFCAE0400FA3E00 /* log4cplus */,
 			);
 			path = 3rd;
@@ -185,7 +199,7 @@
 		496DA47E1AFCAE0600FA3E00 /* core */ = {
 			isa = PBXGroup;
 			children = (
-				496DA54C1B00ACF200FA3E00 /* Constant.h */,
+				496DA54C1B00ACF200FA3E00 /* HConstant.h */,
 				496DA54D1B00ACF200FA3E00 /* Headers.h */,
 				496DA54E1B00ACF200FA3E00 /* HLogger.cpp */,
 				496DA54F1B00ACF200FA3E00 /* HLogger.h */,
@@ -198,9 +212,16 @@
 				496DA5561B00ACF200FA3E00 /* HReference.h */,
 				496DA5571B00ACF200FA3E00 /* HServer.cpp */,
 				496DA5581B00ACF200FA3E00 /* HServer.h */,
-				496DA5591B00ACF200FA3E00 /* Macros.h */,
+				496DA5591B00ACF200FA3E00 /* HMacros.h */,
 				496DA55F1B00AF5F00FA3E00 /* HPoolMgr.cpp */,
 				496DA5601B00AF5F00FA3E00 /* HPoolMgr.h */,
+				496DA5661B01CEC100FA3E00 /* HFileUtils.cpp */,
+				496DA5671B01CEC100FA3E00 /* HFileUtils.h */,
+				496DA5691B01F13C00FA3E00 /* HValues.h */,
+				496DA56A1B01FDB300FA3E00 /* HQueue.cpp */,
+				496DA56B1B01FDB300FA3E00 /* HQueue.h */,
+				496DA5711B02064000FA3E00 /* HMalloc.c */,
+				496DA5721B02064000FA3E00 /* HMalloc.h */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -381,6 +402,15 @@
 			path = pkgconfig;
 			sourceTree = "<group>";
 		};
+		496DA56D1B0201DD00FA3E00 /* beanstalkd-client */ = {
+			isa = PBXGroup;
+			children = (
+				496DA56E1B02020700FA3E00 /* beanstalk.c */,
+				496DA56F1B02020700FA3E00 /* beanstalk.h */,
+			);
+			name = "beanstalkd-client";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -437,10 +467,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				496DA5681B01CEC100FA3E00 /* HFileUtils.cpp in Sources */,
 				496DA55B1B00ACF200FA3E00 /* HModBase.cpp in Sources */,
 				496DA5611B00AF5F00FA3E00 /* HPoolMgr.cpp in Sources */,
+				496DA5701B02020700FA3E00 /* beanstalk.c in Sources */,
 				496DA55A1B00ACF200FA3E00 /* HLogger.cpp in Sources */,
+				496DA56C1B01FDB300FA3E00 /* HQueue.cpp in Sources */,
 				496DA55D1B00ACF200FA3E00 /* HReference.cpp in Sources */,
+				496DA5731B02064000FA3E00 /* HMalloc.c in Sources */,
 				496DA55C1B00ACF200FA3E00 /* HModMgr.cpp in Sources */,
 				496DA49F1B00755500FA3E00 /* main.cpp in Sources */,
 				496DA55E1B00ACF200FA3E00 /* HServer.cpp in Sources */,
@@ -535,7 +569,7 @@
 					/Users/htl/Documents/Work/H/source/3rd/log4cplus/log4cplus/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../source $(SRCROOT)/../../source/3rd/log4cplus/log4cplus/include";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../source $(SRCROOT)/../../source/3rd/log4cplus/log4cplus/include $(SRCROOT)/../../source/3rd/beanstalkd-client";
 			};
 			name = Debug;
 		};
@@ -547,7 +581,7 @@
 					/Users/htl/Documents/Work/H/source/3rd/log4cplus/log4cplus/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../source $(SRCROOT)/../../source/3rd/log4cplus/log4cplus/include";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../source $(SRCROOT)/../../source/3rd/log4cplus/log4cplus/include $(SRCROOT)/../../source/3rd/beanstalkd-client";
 			};
 			name = Release;
 		};

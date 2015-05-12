@@ -11,7 +11,6 @@
 
 #include "log4cplus/configurator.h"
 #include "log4cplus/loggingmacros.h"
-#include "log4cplus/logger.h"
 
 NS_H_BEGIN
 
@@ -19,6 +18,29 @@ using namespace std;
 using namespace log4cplus;
 
 static Logger root = Logger::getRoot();
+
+HLogger* HLogger::create() {
+    HLogger* logger = new HLogger();
+    
+    return logger;
+}
+
+int HLogger::start() {
+    log4cplus::initialize();
+    PropertyConfigurator::doConfigure(LOGGER_CONFIG_FILE);
+    
+    return 0;
+}
+
+int HLogger::stop() {
+    log4cplus::Logger::shutdown();
+    return 0;
+}
+
+int HLogger::process(HMessage* msg) {
+    LOG4CPLUS_DEBUG(root, LOG4CPLUS_TEXT(((char*)msg->data)));
+    return 0;
+}
 
 void* HLogger_create(string configFile) {
     log4cplus::initialize();

@@ -7,18 +7,44 @@
 //
 
 #include "HServer.h"
+#include "HFileUtils.h"
 
 NS_H_BEGIN
 
-int HServer::init() {
+HServer::HServer()
+:_modMgr(nullptr) {
+    
+}
+
+HServer::~HServer() {
+    delete _modMgr;
+}
+
+HServer* HServer::create() {
+    HServer* server = new HServer();
+
+    return server;
+}
+
+int HServer::start() {
+    initModMgr();
+    
     return 0;
 }
 
-int HServer::run() {
+int HServer::stop() {
     return 0;
 }
 
-int HServer::release() {
+int HServer::process(HMessage *msg) {
+    return 0;
+}
+
+int HServer::initModMgr() {
+    _modMgr = HModMgr::create();
+    
+    _modMgr->loadMod("HLogger");
+    
     return 0;
 }
 
